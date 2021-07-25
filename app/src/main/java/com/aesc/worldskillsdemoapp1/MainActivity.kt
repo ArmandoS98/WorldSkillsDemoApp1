@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnResta.setOnClickListener(this)
         btnMultplicacion.setOnClickListener(this)
         btnDivicion.setOnClickListener(this)
+        btnEliminarUno.setOnClickListener(this)
     }
 
     private fun printScreen(value: String) {
@@ -112,6 +113,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnDivicion -> {
                 iden = "D"
                 printScreen("/")
+            }
+            R.id.btnEliminarUno -> {
+                val pantalla = etPantalla.text.toString()
+                val longitud = pantalla.length
+                if (longitud > 0) {
+                    val nuevaCadena = pantalla.substring(0, (longitud - 1))
+                    etPantalla.setText("")
+                    printScreen(nuevaCadena)
+                }
             }
         }
     }

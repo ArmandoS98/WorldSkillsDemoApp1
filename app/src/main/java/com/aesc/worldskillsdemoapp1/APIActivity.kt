@@ -17,9 +17,7 @@ class APIActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apiactivity)
 
-
         getPokemonsView()
-
     }
 
     private fun getPokemonsView() {
@@ -30,7 +28,7 @@ class APIActivity : AppCompatActivity() {
             recyclerInit(it.results!!)
         })
 
-        viewModel.setLimit("6")
+        viewModel.setLimit("50")
     }
 
     private fun recyclerInit(results: List<Result>) {
